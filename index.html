@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+	header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    height: 75px;
+    align-items: center;
+	}
+
+	form { 
+	margin: 0 auto; 
+	text-align: center;
+	padding: 50px;
+	height: 100px;
+	}
+
+	th,td{
+		border: 1px solid black
+	}
+
+	table.a{
+		margin: 0 auto; 
+		border-collapse: collapse;
+		border: 1px solid black;
+		text-align: center;
+		padding: 50px;
+		height: 200px;
+		table-layout: auto;
+		width: auto;
+		empty-cells: hide;
+		margin-top: 50px;
+	}
+
+</style>
+<head>
+	<header>
+	  <h2>FoosBall LeaderBoard</h2>
+	</header>
+</head>
+<body>
+		<div style="float:left; width:40%;" align="center" class="split left">
+			<form name="registrationFrom" id="registrationFrom" method="post" action="{{url_for('addMatchResult')}}">
+				<div class="formelement">
+				  Team A Name : 
+				  <input type="text" name="teamA" required><br><br>
+				</div>
+				<div class="formelement" >
+				  Team B Name :
+				  <input type="text" name="teamB" required><br><br>
+				</div>
+				<div class="formelement">
+				  Goals Scored by A :
+				  <input type="text" name="goalA" required><br><br>
+				</div>
+				<div class="formelement">
+				  Goals Scored by B :
+				  <input type="text" name="goalB" required><br><br>
+				</div>
+				  {{comment}} <br><br>
+				  <input type="button" value="Add New Team" onclick="window.location.href='{{url_for('home')}}' ">
+				  <input type="submit" value="Save Match Result">
+			</form>
+		</div>
+
+		<div class=divv style="float:left; width:60%;" align="center"  class="split right">
+			<table class="a">
+				<tr>
+					<th> RANK </th>
+					<th> TEAM NAME </th>
+					<th> TOTAL MATCHES</th>
+					<th> WINS </th>
+					<th> LOSS </th>
+					<th> POINTS </th>
+				</tr>
+				<tr>
+					<th> {{leaderboard[0][0]}}</th>
+					<th> {{leaderboard[0][1]}} </th>
+					<th> {{leaderboard[0][2]}}</th>
+					<th> {{leaderboard[0][3]}} </th>
+					<th> {{leaderboard[0][4]}} </th>
+					<th> {{leaderboard[0][5]}} </th>
+				</tr>
+				<tr>
+					<th> {{leaderboard[1][0]}}</th>
+					<th> {{leaderboard[1][1]}} </th>
+					<th> {{leaderboard[1][2]}}</th>
+					<th> {{leaderboard[1][3]}} </th>
+					<th> {{leaderboard[1][4]}} </th>
+					<th> {{leaderboard[1][5]}} </th>
+				</tr>
+				<tr>
+					<th> {{leaderboard[2][0]}}</th>
+					<th> {{leaderboard[2][1]}} </th>
+					<th> {{leaderboard[2][2]}}</th>
+					<th> {{leaderboard[2][3]}} </th>
+					<th> {{leaderboard[2][4]}} </th>
+					<th> {{leaderboard[2][5]}} </th>
+				</tr>
+				<tr>
+					<th> {{leaderboard[3][0]}}</th>
+					<th> {{leaderboard[3][1]}} </th>
+					<th> {{leaderboard[3][2]}}</th>
+					<th> {{leaderboard[3][3]}} </th>
+					<th> {{leaderboard[3][4]}} </th>
+					<th> {{leaderboard[3][5]}} </th>
+				</tr>
+				<tr>
+					<th> {{leaderboard[4][0]}}</th>
+					<th> {{leaderboard[4][1]}} </th>
+					<th> {{leaderboard[4][2]}}</th>
+					<th> {{leaderboard[4][3]}} </th>
+					<th> {{leaderboard[4][4]}} </th>
+					<th> {{leaderboard[4][5]}} </th>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

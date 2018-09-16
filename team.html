@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+	header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    height: 75px;
+    align-items: center;
+	}
+
+	form { 
+	margin: 0 auto; 
+	text-align: center;
+	padding: 100px;
+	height: 200px;
+	align-content: center;
+	align-items: center;
+	}
+
+	table.a{
+		border-collapse: collapse;
+		border: 1px solid black;
+		text-align: center;
+		padding: 50px;
+		height: 100px;
+		table-layout: auto;
+		width: auto;
+		empty-cells: hide;
+	}
+</style>
+<head>
+	<header>
+	  <h2>FoosBall LeaderBoard</h2>
+	</header>
+</head>
+<body>
+	<div style="width:100%; align-content: center;" >
+		
+		<form name="registrationFrom" id="registrationFrom" method="post" action="{{url_for('addTeam')}}">
+			<div class="formelement">
+			  Team Name : 
+			  <input type="text" name="teamName" id="teamName" required><br><br>
+			</div>
+			<div class="formelement">
+			  Player 1 Name :
+			  <input type="text" name="player1" id="player1" required><br><br>
+			</div>
+			<div class="formelement">
+			  Player 2 Name :
+			  <input type="text" name="player2" id="player2" required ><br><br>
+			</div>
+			  {{comment}} <br><br>
+			  <input type="button" value="Play Match" onclick="window.location.href='{{url_for('index')}}' ">
+			  <input type="submit" value="Add Team">
+		</form>
+		
+	</div>
+	
+</body>
+</html>
